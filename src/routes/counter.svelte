@@ -30,10 +30,10 @@
 <h3>Interval: {$intervalStore} ms</h3>
 <input
 	type="range"
-	on:input={onIntervalChange}
+	oninput={onIntervalChange}
 	min="100"
 	max="1000"
 	step="100"
 	bind:value={$intervalStore}
 />
-<button on:click={togglePause}>{$pauseStore ? 'Resume' : 'Pause'}</button>
+<button onclick={togglePause}>{$pauseStore ? 'Resume' : 'Pause'}</button>
