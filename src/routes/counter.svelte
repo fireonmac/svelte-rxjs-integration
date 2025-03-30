@@ -13,8 +13,8 @@
 	const _pause$ = toObservable(pauseStore);
 	const count$ = combineLatest([_interval$, _pause$]).pipe(
 		switchMap(([interval, isPaused]) => timer(0, interval).pipe(map(() => (isPaused ? 0 : 1)))),
-		scan((acc, value) => acc + value, 0), // Accumulate count,
-		startWith(0) // Start with 0
+		scan((acc, value) => acc + value, 0),
+		startWith(0)
 	);
 
 	// Event handlers
